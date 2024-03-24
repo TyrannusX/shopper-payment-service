@@ -4,11 +4,14 @@ from domain import models
 from infrastructure import dtos
 import requests
 import base64
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
-PAYPAL_CLIENT_ID = ""
-PAYPAL_SECRET = ""
-PAYPAL_BASE = ""
+PAYPAL_CLIENT_ID = os.getenv("PAYPAL_CLIENT_ID")
+PAYPAL_SECRET = os.getenv("PAYPAL_SECRET")
+PAYPAL_BASE = os.getenv("PAYPAL_BASE")
 
 
 class PaymentProcessor(ABC):
